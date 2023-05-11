@@ -1,0 +1,26 @@
+$script = <<-SCRIPT
+echo I am provisioning...
+git clone https://github.com/anxmukul/learning-vagrant.git
+curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash - &&\
+sudo apt-get install -y nodejs
+cd learning-vagrant
+echo installing dependencies for app......
+npm install
+echo starting the app server....
+# npm start
+date > /etc/vagrant_provisioned_at
+SCRIPT
+
+Vagrant.configure("2") do |config|
+
+  config.vm.define "VirtualMachine1" do |machine|
+    machine.vm.box = "hashicorp/bionic64" #install ubuntu
+    config.vm.provision "shell", inline: $script
+  end
+
+  # config.vm.define "VirtualMachine2" do |machine|
+  #   machine.vm.box = "hashicorp/bionic64"
+  #   config.vm.provision "shell", inline: $script
+  # end
+end
+
