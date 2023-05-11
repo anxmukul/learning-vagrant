@@ -1,0 +1,23 @@
+{
+  "name": "learning-vagrant",
+  "version": "1.0.0",
+  "description": "Just a random nodejs app to deploy on virtual machines, created and managed by vagrant,",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anxmukul/learning-vagrant.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/anxmukul/learning-vagrant/issues"
+  },
+  "homepage": "https://github.com/anxmukul/learning-vagrant#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
